@@ -9,3 +9,5 @@ C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcore
 C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.AssemblyInfo.cs
 C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.dll
 C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.pdb
+C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.genruntimeconfig.cache
+C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.csproj.CoreCompileInputs.cache

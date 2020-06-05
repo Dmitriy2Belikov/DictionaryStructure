@@ -1,0 +1,15 @@
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\nunit.engine.dll
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\nunit.engine.api.dll
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\nunit.engine.nuget.addins
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\MyDictionary.exe
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\MyDictionary.deps.json
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\MyDictionary.runtimeconfig.json
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\MyDictionary.runtimeconfig.dev.json
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\b\MyDictionary\Debug\netcoreapp3.1\MyDictionary.dll
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\i\MyDictionary\Debug\netcoreapp3.1\MyDictionary.csprojAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\i\MyDictionary\Debug\netcoreapp3.1\MyDictionary.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\i\MyDictionary\Debug\netcoreapp3.1\MyDictionary.AssemblyInfo.cs
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\i\MyDictionary\Debug\netcoreapp3.1\MyDictionary.csproj.CopyComplete
+C:\Users\Дмитрий\source\repos\MyDictionary\.vs\MyDictionary\v16\lut\0\i\MyDictionary\Debug\netcoreapp3.1\MyDictionary.dll
