@@ -5,8 +5,10 @@ namespace MyDictionary
 {
     public class MyDictionary : IDictionary
     {
-        public List<string> Keys { get; }
-        public List<string> Values { get; }
+        private List<string> Keys { get; }
+        private List<string> Values { get; }
+
+        public int Count => Keys.Count;
 
         public MyDictionary()
         {

@@ -54,8 +54,9 @@ namespace MyDictionary.Tests
         {
             var timer = new Stopwatch();
             var timeLimitInSec = 0.1;
+            var count = 150000;
 
-            for (var i = 0; i < 60000; i++)
+            for (var i = 0; i < count; i++)
                 _dictionary.Add("Key" + i, "Value" + i);
 
             timer.Start();
@@ -70,6 +71,7 @@ namespace MyDictionary.Tests
             Assert.IsTrue(contains);
             Assert.AreEqual("Value29000", value);
             Assert.AreEqual("123", _dictionary[key]);
+            Assert.AreEqual(count, _dictionary.Count);
         }
     }
 }

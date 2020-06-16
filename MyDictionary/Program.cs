@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Specialized;
 
 namespace MyDictionary
 {
@@ -9,7 +8,6 @@ namespace MyDictionary
         {
             var dictStr = new StringDictionary();
             var dict = new Dictionary<string, string>();
-
         }
     }
 }
