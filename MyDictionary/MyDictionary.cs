@@ -3,47 +3,47 @@ using System.Collections.Generic;
 
 namespace MyDictionary
 {
-    public class MyDictionary<TKey, TValue>
+    public class MyDictionary : IDictionary
     {
-        public List<TKey> Keys { get; private set; }
-        public List<TValue> Values { get; private set; }
+        public List<string> Keys { get; }
+        public List<string> Values { get; }
 
         public MyDictionary()
         {
-            Keys = new List<TKey>();
-            Values = new List<TValue>();
+            Keys = new List<string>();
+            Values = new List<string>();
         }
 
-        public void Add(TKey key, TValue value)
+        public void Add(string key, string value)
         {
             if (ContainsKey(key))
-                throw new Exception("Данный ключ уже существует");
+            {
+                Values[Keys.IndexOf(key)] = value;
+            }
 
             Keys.Add(key);
             Values.Add(value);
         }
 
-        public bool ContainsKey(TKey key)
+        public bool ContainsKey(string key)
         {
             return Keys.Contains(key);
         }
 
-        public void Remove(TKey key)
+        public void Remove(string key)
         {
             Values.RemoveAt(Keys.IndexOf(key));
             Keys.Remove(key);
         }
 
-        public TValue this[TKey key]
+        public string this[string key]
         {
             get
             {
                 return Values[Keys.IndexOf(key)];
             }
-            set
-            {
-                Values[Keys.IndexOf(key)] = value;
-            }
+
+            set => Add(key, value);
         }
     }
 }

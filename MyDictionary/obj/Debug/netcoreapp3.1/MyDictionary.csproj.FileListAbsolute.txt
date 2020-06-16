@@ -11,3 +11,14 @@ C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcore
 C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.pdb
 C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.genruntimeconfig.cache
 C:\Users\Дмитрий\source\repos\MyDictionary\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\bin\Debug\netcoreapp3.1\MyDictionary.exe
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\bin\Debug\netcoreapp3.1\MyDictionary.deps.json
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\bin\Debug\netcoreapp3.1\MyDictionary.runtimeconfig.json
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\bin\Debug\netcoreapp3.1\MyDictionary.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\bin\Debug\netcoreapp3.1\MyDictionary.dll
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\bin\Debug\netcoreapp3.1\MyDictionary.pdb
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.dll
+C:\Users\Admin\Desktop\Проекты\АСА\DictionaryStructure\MyDictionary\obj\Debug\netcoreapp3.1\MyDictionary.pdb
