@@ -12,15 +12,12 @@ namespace MyDictionary
             public string value;         
         }
 
-        private int[]? _buckets;
-        private Entry[]? _entries;
+        private int[] _buckets;
+        private Entry[] _entries;
 
         private int _count;
         private int _freeList;
         private int _freeCount;
-
-        private const int StartOfFreeList = -3;
-
 
         public StringDictionary()
         {
@@ -41,7 +38,7 @@ namespace MyDictionary
                 var i = FindEntry(key);
 
                 if (i >= 0) 
-                    return _entries![i].value;
+                    return _entries[i].value;
                 
                 return null;
             }
@@ -57,21 +54,14 @@ namespace MyDictionary
             }
 
             var entries = _entries;
-
             var hashCode = (uint)key.GetHashCode();
 
-          
             ref var bucket = ref _buckets[hashCode % _buckets.Length];
-
             var i = bucket - 1;
 
-            while (true)
+            // Update value for current key
+            while (i != -1)
             {
-                if ((uint)i >= (uint)entries.Length)
-                {
-                    break;
-                }
-
                 if (entries[i].hashCode == hashCode && entries[i].key == key)
                 {
                     entries[i].value = value;
@@ -81,8 +71,10 @@ namespace MyDictionary
                 i = entries[i].next;
             } 
 
+            // If collection doesn't have current key
             var updateFreeList = false;
             int index;
+
             if (_freeCount > 0)
             {
                 index = _freeList;
@@ -91,22 +83,21 @@ namespace MyDictionary
             }
             else
             {
-                var count = _count;
-                if (count == entries.Length)
+                if (_count == entries.Length)
                 {
                     Resize();
-                    bucket = ref _buckets[hashCode % (uint)_buckets.Length];
+                    bucket = ref _buckets[hashCode % _buckets.Length];
                 }
-                index = count;
-                _count = count + 1;
+                index = _count;
+                _count++;
                 entries = _entries;
             }
 
-            ref var entry = ref entries![index];
+            ref var entry = ref entries[index];
 
             if (updateFreeList)
             {
-                _freeList = StartOfFreeList - entries[_freeList].next;
+                _freeList = entries[_freeList].next;
             }
 
             entry.hashCode = hashCode;
@@ -116,35 +107,22 @@ namespace MyDictionary
             bucket = index + 1;
         }
 
-        public bool ContainsKey(string key)
-            => FindEntry(key) >= 0;
+        public bool ContainsKey(string key) => FindEntry(key) != -1;
 
         private int FindEntry(string key)
         {
             if (key == null)
             {
-                throw new NullReferenceException();
+                throw new ArgumentNullException();
             }
 
-            var i = -1;
-            var buckets = _buckets;
-            var entries = _entries;
+            var hashCode = (uint)key.GetHashCode();
             
-            if (buckets != null)
+            var i = _buckets[hashCode % _buckets.Length] - 1;
+            
+            while (!(i == -1 || (_entries[i].hashCode == hashCode && _entries[i].key == key)))
             {
-                var hashCode = (uint)key.GetHashCode();
-                
-                i = buckets[hashCode % buckets.Length] - 1;
-                
-                while (true)
-                {
-                    if ((uint)i >= entries.Length || (entries[i].hashCode == hashCode && entries[i].key == key))
-                    {
-                        break;
-                    }
-
-                    i = entries[i].next;
-                }
+                i = _entries[i].next;
             }
 
             return i;
@@ -162,7 +140,7 @@ namespace MyDictionary
             {
                 if (entries[i].next >= -1)
                 {
-                    var bucket = entries[i].hashCode % (uint)newSize; 
+                    var bucket = entries[i].hashCode % newSize; 
                     entries[i].next = buckets[bucket] - 1;
                     
                     buckets[bucket] = i + 1;
@@ -183,39 +161,37 @@ namespace MyDictionary
             var buckets = _buckets;
             var entries = _entries;
 
-            if (buckets != null)
+            var hashCode = (uint)key.GetHashCode();
+            var bucket = hashCode % buckets.Length;
+            var last = -1;
+            
+            var i = buckets[bucket] - 1;
+            while (i >= 0)
             {
-                var hashCode = (uint)key.GetHashCode();
-                var bucket = hashCode % (uint)buckets.Length;
-                var last = -1;
-                
-                var i = buckets[bucket] - 1;
-                while (i >= 0)
+                ref var entry = ref entries[i];
+
+                if (entry.hashCode == hashCode && entry.key == key)
                 {
-                    ref var entry = ref entries[i];
-
-                    if (entry.hashCode == hashCode && entry.key == key)
+                    if (last < 0)
                     {
-                        if (last < 0)
-                        {
-                            buckets[bucket] = entry.next + 1;
-                        }
-                        else
-                        {
-                            entries[last].next = entry.next;
-                        }
-
-                        entry.next = StartOfFreeList - _freeList;
-
-                        _freeList = i;
-                        _freeCount++;
-                        return;
+                        buckets[bucket] = entry.next + 1;
+                    }
+                    else
+                    {
+                        entries[last].next = entry.next;
                     }
 
-                    last = i;
-                    i = entry.next;
+                    entry.next = _freeList;
+
+                    _freeList = i;
+                    _freeCount++;
+                    return;
                 }
+
+                last = i;
+                i = entry.next;
             }
+            
         }
     }
 }

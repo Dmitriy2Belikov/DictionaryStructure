@@ -6,7 +6,6 @@ namespace MyDictionary
     {
         static void Main(string[] args)
         {
-            var dictStr = new StringDictionary();
             var dict = new Dictionary<string, string>();
         }
     }

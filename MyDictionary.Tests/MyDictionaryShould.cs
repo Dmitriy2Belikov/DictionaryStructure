@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using System.Diagnostics;
 
@@ -30,6 +31,22 @@ namespace MyDictionary.Tests
         }
 
         [Test]
+        public void ContainsKeyAllShould()
+        {
+            var count = 130;
+
+            for (var i = 0; i < count; i++)
+            {
+                _dictionary.Add("Key_" + i, "Value_" + i);
+            }
+
+            for (var i = 0; i < count; i++)
+            {
+                Assert.True(_dictionary.ContainsKey("Key_" + i));
+            }
+        }
+
+        [Test]
         public void RemoveShould()
         {
             _dictionary.Add("TestKey", "TestValue");
@@ -37,6 +54,29 @@ namespace MyDictionary.Tests
             _dictionary.Remove("TestKey");
 
             Assert.AreEqual(false, _dictionary.ContainsKey("TestKey"));
+        }
+
+        [Test]
+        public void RemoveAllShould()
+        {
+            var count = 65;
+
+            for (var i = 0; i < count; i++)
+            {
+                _dictionary.Add("Key_" + i, "Value_" + i);
+            }
+
+            for (var i = 0; i < count; i++)
+            {
+                _dictionary.Remove("Key_" + i);
+            }
+
+            Assert.AreEqual(0, _dictionary.Count);
+
+            for (var i = 0; i < count; i++)
+            {
+                Assert.IsFalse(_dictionary.ContainsKey("Key_" + i));
+            }
         }
 
         [Test]
@@ -50,11 +90,22 @@ namespace MyDictionary.Tests
         }
 
         [Test]
+        public void NullShould()
+        {
+            var key = _dictionary["Unknown_key"];
+            
+            Assert.Catch<ArgumentNullException>(() =>_dictionary.Add(null, "value"));
+            Assert.Catch<ArgumentNullException>(() =>_dictionary.ContainsKey(null));
+            Assert.Catch<ArgumentNullException>(() =>_dictionary.Remove(null));
+            Assert.AreEqual(null, key);
+        }
+
+        [Test]
         public void ThirtyThousandValuesSpeedShould()
         {
             var timer = new Stopwatch();
             var timeLimitInSec = 0.1;
-            var count = 150000;
+            var count = 60000;
 
             for (var i = 0; i < count; i++)
                 _dictionary.Add("Key" + i, "Value" + i);
