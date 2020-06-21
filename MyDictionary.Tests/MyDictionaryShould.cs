@@ -90,6 +90,16 @@ namespace MyDictionary.Tests
         }
 
         [Test]
+        public void CaseShould()
+        {
+            _dictionary.Add("TestKey", "TestValue1");
+            _dictionary.Add("TEstKey", "TestValue2");
+
+            Assert.AreEqual("TestValue1", _dictionary["TestKey"]);
+            Assert.AreNotEqual("TestValue2", _dictionary["TestKey"]);
+        }
+
+        [Test]
         public void NullShould()
         {
             var key = _dictionary["Unknown_key"];
